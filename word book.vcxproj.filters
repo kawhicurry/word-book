@@ -33,9 +33,6 @@
     <ClCompile Include="initial.cpp">
       <Filter>Resource Files\function</Filter>
     </ClCompile>
-    <ClCompile Include="data.cpp">
-      <Filter>Resource Files\function</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="files.h">
@@ -47,7 +44,7 @@
     <ClInclude Include="menu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="data.h">
+    <ClInclude Include="initial.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

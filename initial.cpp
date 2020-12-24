@@ -3,23 +3,26 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include "data.h"
 
-#define LENGTH 30
+#define LENGTH 50
 
 typedef struct Word {
+  int number;
   char eng[LENGTH];
   char chn[LENGTH];
   struct tm *time;
 } Word;
+char address[LENGTH] = {0};
 
 void initialize(void) {
   FILE *fp;
-  time_t tmp_time=0;
+  time_t rawtime = 0;
+  struct tm temp;
   printf("where do u want to keep the book?\n");
   gets_s(address, LENGTH);
-  Word initial_word = {"hello, world", "初始单词"};
-  initial_word.time = gmtime(&tmp_time);
+  rawtime = time(NULL);
+  localtime_s(&temp, &rawtime);
+  Word initial_word = {0, "hello, world", "初始单词", &temp};
   fopen_s(&fp, address, "w");
   if (!fp) {
     printf("fail to establish the book,please try other address.\n");
