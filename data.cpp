@@ -3,10 +3,12 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#define LENGTH 20
+
+#define LENGTH 30
 
 typedef struct Word {
   char eng[LENGTH];
   char chn[LENGTH];
-  int time;
-}Word;
+  struct tm *time;
+} Word;
+extern char address[LENGTH] = {0};
